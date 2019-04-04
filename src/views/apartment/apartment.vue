@@ -133,9 +133,6 @@
                     <div><img  style="position: absolute; left: 10%" height="100px" width="100px" :src="studentDetail.pic" /></div>
                 </div><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             </div>
-            <div>
-
-            </div>
         </el-dialog>
     </div>
 </template>
