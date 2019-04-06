@@ -4,7 +4,7 @@
         <span>
             <span style="font-size: xx-large; font-weight: bold; margin-left: 30px">公寓管理</span>
             <el-button type="primary" style="margin-right: 30px; float: right">录入数据</el-button>
-        </span><br/><br/><br/><br/><br/>
+        </span><br/><br/><br/><br/>
         <div style="margin-left: 30px; margin-right: 30px">
             <span style="font-weight: bold; font-size: larger">入住信息</span><br/><br/><br/>
             <div style="margin-left: 10px">
