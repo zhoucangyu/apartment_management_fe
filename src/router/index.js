@@ -14,6 +14,7 @@ import index from '@/views/dashboard/index'
 import apartment from '@/views/apartment/apartment.vue'
 import student from '@/views/student/student.vue'
 import business from '@/views/business/business.vue'
+import visitor from '@/views/visitor/visitor.vue'
 import alarm from '@/views/alarm/alarm.vue'
 
 /**
@@ -87,6 +88,21 @@ export const constantRouterMap = [
                     title: '事务管理'
                 },
                 component: business
+            }
+        ]
+    },
+    {
+        path: '/visitor',
+        component: Layout,
+        children: [
+            {
+                path: '/visitor',
+                name: 'visitor',
+                meta: {
+                    icon: 'visitor',
+                    title: '访客管理'
+                },
+                component: visitor
             }
         ]
     },
