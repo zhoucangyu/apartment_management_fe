@@ -3,10 +3,10 @@
         <el-menu class="navbar" mode="horizontal">
             <hamburger :toggle-click="toggleSideBar" :is-active="sidebar.opened" class="hamburger-container"/>
             <breadcrumb />
-            <!--<span style="position: absolute; right: 10px; color: #505050">
-                <span style="font-size: 13px">{{ username }}</span>
-                <el-button type="text" size="mini" @click="handleLogout">退出登录</el-button>
-            </span>-->
+            <span style="position: absolute; right: 10px; color: #505050">
+                <span style="font-size: 15px">{{ username }}</span>
+                <el-button type="text" size="mini" @click="handleLogout" style="margin-left: 5px">退出登录</el-button>
+            </span>
         </el-menu>
     </div>
 </template>
@@ -36,36 +36,38 @@
             toggleSideBar () {
                 this.$store.dispatch('ToggleSideBar')
             },
-            /*getUsername () {
+            getUsername () {
                 var _this = this;  // 将vue对象的this赋值给另一个变量，因为回调函数处于其他函数内部，this不会与任何对象绑定，为undefined
 
-                $.ajax({  // 获取表格数据
-                    type: "GET",
-                    url: "https://magicworld.58corp.com/admin/username",
-                    contentType: "application/x-www-form-urlencoded; charset=utf-8",
-                    data: {
+                this.$axios({
+                    method: 'get',
+                    url: 'http://localhost:8080/username',
+                    params: {
 
-                    },
-                    success (data) {
-                        var result = JSON.parse(data);
-                        if(result.code === 1){
-                            _this.username = result.data;  // 获取username
-                        }else {
-                            _this.$message({
-                                message: result.message,
-                                type: 'error'
-                            });
-                        }
                     }
+                }).then(function(response) {
+                    let result = response.data;
+                    if (result.code === 1) {
+                        // 赋值数据
+                        _this.username = result.data;
+                    }
+                    else {
+                        this.$message({
+                            message: result.message,
+                            type: 'error'
+                        });
+                    }
+                }).catch(function(error) {
+
                 })
             },
             handleLogout () {
-                window.location.href = "https://passport.58corp.com/logout?service=https://magicworld.58corp.com/";
-            }*/
+                window.location.href = "http://localhost:8080/login";
+            }
         },
-        /*mounted () {
+        mounted () {
             this.getUsername();
-        }*/
+        }
     }
 </script>
 
