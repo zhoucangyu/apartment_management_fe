@@ -251,7 +251,7 @@
                 let sexChart = this.$echarts.init(document.getElementById('sexChart'));
                 let option = {
                     title : {
-                        text: '公寓人数分布',
+                        text: '学生性别分布',
                         x:'center'
                     },
                     tooltip : {
